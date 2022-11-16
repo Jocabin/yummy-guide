@@ -25,6 +25,8 @@
         width: 100%;
         background-color: var(--dark-blue);
         padding: 1rem;
+        position: sticky;
+        top: 0;
     }
 
     nav {
