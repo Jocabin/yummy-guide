@@ -5,7 +5,12 @@
     import {onMount} from "svelte";
     import SearchAutocomplete from "./SearchAutocomplete.svelte";
 
-    let nameForm, descriptionForm, categoryForm, typeForm, siteUrlForm, priceForm;
+    let nameForm = null;
+    let descriptionForm = null;
+    let styleForm = null;
+    let typeForm = null;
+    let siteUrlForm = null;
+    let priceForm = null;
     let tagsForm = []
     let deliveryForm = []
     let address = {
@@ -22,14 +27,15 @@
     let tags = [];
     let types = [];
 
+
     onMount(() => {
-        getCategories()
+        getStyles()
         getTags()
         getTypes()
     })
 
-    async function getCategories() {
-        const {data, error} = await supabase.from('categories').select();
+    async function getStyles() {
+        const {data, error} = await supabase.from('styles').select();
         categories = data
         error && console.error(error)
     }
@@ -59,7 +65,7 @@
                     latitude: address.lat || null,
                     //todo plusieurs tags
                     tags: JSON.stringify(tagsForm),
-                    category: categoryForm,
+                    style: styleForm,
                     thumbnail: image.url,
                     type: typeForm,
                     url: slugify(nameForm, {lower: true}),
@@ -67,6 +73,21 @@
                 }
             ])
         error && console.error(error)
+        let object = {
+            name: nameForm,
+            price_indicator : priceForm,
+            description: descriptionForm,
+            site_url: siteUrlForm || null,
+            longitude: address.lng || null,
+            latitude: address.lat || null,
+            tags: JSON.stringify(tagsForm),
+            category: styleForm,
+            thumbnail: image.url,
+            type: typeForm,
+            url: slugify(nameForm, {lower: true}),
+            address: address.label
+        }
+        console.log(object)
     }
 
     async function registerImg(img) {
@@ -120,27 +141,28 @@
 <form on:submit|preventDefault={()=>submitForm()}>
     <p>
         <label for="name">Nom</label>
-        <input type="text" id="name" on:input={(e)=>nameForm = e.target.value} required>
+        <input type="text" id="name" value={nameForm} on:input={(e)=>nameForm = e.target.value} required>
     </p>
     <p>
         <label for="description">Description</label>
-        <textarea id="description" on:input={(e)=>descriptionForm = e.target.value} required></textarea>
+        <textarea id="description" value={descriptionForm} on:input={(e)=>descriptionForm = e.target.value} required></textarea>
     </p>
     <p>
         <label for="site">Site</label>
-        <input type="url" id="site" on:input={(e)=>siteUrlForm = e.target.value}>
+        <input type="url" id="site" value={siteUrlForm} on:input={(e)=>siteUrlForm = e.target.value}>
     </p>
     <p>
         <label for="address">Address</label>
-        <SearchAutocomplete inputID="address" {getItem}/>
+        <SearchAutocomplete id="address" {getItem}/>
     </p>
     <p>
         <label for="price">Indicateur de prix</label>
-        <span><bdi>€</bdi><input type="range" min="1" max="3" id="price" on:input={(e)=>priceForm = e.target.value}><bdi>€€€</bdi></span>
+        <span><bdi>€</bdi><input type="range" min="1" max="3" id="price" value={priceForm} on:input={(e)=>priceForm = e.target.value} required><bdi>€€€</bdi></span>
     </p>
     <p>
         <label for="category">Style</label>
-        <select name="category" id="category" on:input={(e)=>categoryForm = e.target.value} required>
+        <select name="category" id="category" on:input={(e)=>styleForm = e.target.value} required>
+            <option disabled selected="selected" value="">Style</option>
             {#each categories as category}
                 <option value={category.id}>{category.name}</option>
             {/each}
@@ -149,6 +171,7 @@
     <p>
         <label for="types">Types</label>
         <select name="types" id="types" on:input={(e)=>typeForm = e.target.value} required>
+            <option disabled selected="selected" value="">Types</option>
             {#each types as type}
                 <option value={type.id}>{type.name}</option>
             {/each}

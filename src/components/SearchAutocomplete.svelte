@@ -1,5 +1,4 @@
 <script>
-    export let inputID;
     export let getItem;
     let autocompleteVisibility = true
     let search = {
@@ -30,7 +29,7 @@
         }
     }
 </script>
-<input type="text" value={search.label} placeholder="recherche" on:input={e => autocomplete(e)} id={inputID}} on:focus={autocompleteVisibility = true} required>
+<input {...$$restProps} type="text" value={search.label} placeholder="recherche" on:input={e => autocomplete(e)} on:focus={autocompleteVisibility = true} required>
 {#if autocompleteList.length > 0 && autocompleteVisibility}
     <ul>
         {#each autocompleteList as item}
