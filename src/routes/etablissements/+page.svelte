@@ -13,7 +13,8 @@
 <style>
     .gridLayout {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 370px);
+        grid-template-columns: repeat(auto-fill, 340px);
+        grid-template-rows: repeat(auto-fill, 400px);
         gap: 4rem;
         width: 100%;
     }

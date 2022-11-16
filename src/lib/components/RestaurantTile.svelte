@@ -19,6 +19,7 @@
         gap: 1rem;
         align-items: flex-start;
         justify-content: flex-start;
+        overflow: hidden;
     }
 
     article > img {
