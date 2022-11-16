@@ -1,6 +1,6 @@
 :root {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.6 !important;
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -54,4 +54,14 @@ div[id='app'] {
     text-align: center;
     text-decoration: none;
     border-radius: 100rem;
+}
+
+.button:focus {
+    filter: brightness(90%);
+}
+
+@media (hover: hover) {
+    .button:hover {
+        filter: brightness(90%);
+    }
 }
