@@ -1,55 +1,57 @@
 <script>
-    import Logo from "$lib/components/Logo.svelte";
+    import Logo from "$lib/components/Logo.svelte"
 </script>
 
 <header>
-    <nav>
-        <a href="/">
+        <a href="/" class="logo" title="accueil" target="_self">
             <Logo/>
         </a>
-
-        <ul>
-            <li><a href="/notre-concept">Notre concept</a></li>
-            <li><a href="/commerces-responsables">Les commerces responsables</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/nous-contacter">Contact</a></li>
-        </ul>
-
-        <a class="button" href="/ajouter-commerce">Ajouter un commerce</a>
-    </nav>
+            <nav>
+                <a href="/" title="Accueil" target="_self">Accueil</a>
+                <a href="/notre-concept" title="Notre concept" target="_self">Notre concept</a>
+                <a href="/commerces-responsables" title="Les commerces responsables" target="_self">Les commerces responsables</a>
+                <a href="/blog" title="Blog" target="_self">Blog</a>
+                <a href="/faq" title="F.A.Q" target="_self">F.A.Q</a>
+                <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
+                <a class="button" href="/commerces-responsables/ajouter" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
+            </nav>
 </header>
 
-<style>
-    header {
-        width: 100%;
-        background-color: var(--dark-blue);
-        padding: 1rem;
-        position: sticky;
-        top: 0;
-    }
+<style lang="sass">
+    header
+      display: flex
+      align-items: center
+      background-color: $dark-blue
+      padding: 1em
+      justify-content: space-around
+      a.logo
+        max-width: 128px
+      nav
+        display: flex
+        align-items: center
+        gap: 2em
+        a
+          text-decoration: none
+          color: $white
+          font-size: 1em
+          font-weight: 700
+          transition: all ease-in-out 150ms
+          &:hover, &:focus
+            color: $orange
 
-    nav {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
+          &.button
+            font-size: 1em
+            padding: .75em 2em
+            background-color: rgba($orange, 1)
+            color: $white
+            text-align: center
+            text-decoration: none
+            border-radius: 100rem
+            transition: all ease-in-out 150ms
+            border: 2px solid $orange
+            &:hover, &:focus
+              background-color: rgba($orange, 0)
+              color: rgba($orange, 1)
+              font-weight: 700
 
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    nav ul a {
-        color: var(--white);
-        text-decoration: none;
-    }
 </style>

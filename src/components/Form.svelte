@@ -54,7 +54,7 @@
 
     async function saveDatas() {
         const {data, error} = await supabase
-            .from('etablissements')
+            .from('commerces-responsables')
             .insert([
                 {
                     name: nameForm,

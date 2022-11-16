@@ -48,20 +48,12 @@ div[id='app'] {
 }
 
 .button {
-    padding: 1rem 1.5rem;
+    padding: 1em 2em;
     background-color: var(--orange);
     color: var(--white);
     text-align: center;
     text-decoration: none;
     border-radius: 100rem;
-}
-
-.button:focus {
-    filter: brightness(90%);
-}
-
-@media (hover: hover) {
-    .button:hover {
-        filter: brightness(90%);
-    }
+    font-size: 16px;
+    font-weight: 400;
 }
