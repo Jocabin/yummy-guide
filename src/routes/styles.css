@@ -53,4 +53,5 @@ div[id='app'] {
     color: var(--white);
     text-align: center;
     text-decoration: none;
+    border-radius: 100rem;
 }
