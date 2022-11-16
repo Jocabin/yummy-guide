@@ -29,10 +29,10 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"uuid": "^9.0.0",
-		"vite": "^3.1.0"
+		"vite": "^3.1.0",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.84"
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.84"
 	}
 }
