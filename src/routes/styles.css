@@ -1,6 +1,6 @@
 :root {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.6 !important;
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
