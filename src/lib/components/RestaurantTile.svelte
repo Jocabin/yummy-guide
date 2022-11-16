@@ -16,7 +16,7 @@
 
     <section>
         <h2>{info.name}</h2>
-        {Math.round((distance * 100) / 100)+ " km"}
+        {Math.round(distance * 100) / 100+ " km"}
         <p>{info.description}</p>
 <!--        todo add tags-->
     </section>
