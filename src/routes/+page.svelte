@@ -83,6 +83,7 @@
         justify-content: center;
         align-items: center;
         gap: 4rem;
+        width: 100%;
     }
 
     .texte > div {
