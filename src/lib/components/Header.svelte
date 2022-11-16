@@ -12,6 +12,7 @@
             <li><a href="/notre-concept">Notre concept</a></li>
             <li><a href="/commerces-responsables">Les commerces responsables</a></li>
             <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="/nous-contacter">Contact</a></li>
         </ul>
 
