@@ -1,5 +1,6 @@
 <script>
     import Logo from "$lib/components/Logo.svelte";
+    import RSLink from "$lib/components/RSLink.svelte";
 </script>
 
 <footer>
@@ -17,14 +18,9 @@
         </ul>
 
         <ul>
-            <li><a class="rs" href="https://facebook.com">
-            </a></li>
-
-            <li><a class="rs" href="https://instagram.com">
-            </a></li>
-
-            <li><a class="rs" href="https://twitter.com">
-            </a></li>
+            <RSLink social="facebook" url="/"/>
+            <RSLink social="instagram" url="/"/>
+            <RSLink social="twitter" url="/"/>
         </ul>
     </div>
 
@@ -65,21 +61,7 @@
         gap: 2rem;
     }
 
-    ul a:not(.rs) {
+    ul a {
         color: var(--white);
-    }
-
-    a.rs {
-        text-decoration: none;
-        color: var(--white);
-        width: 2.5rem;
-        height: 2.5rem;
-        background-color: red;
-        display: block;
-    }
-
-    a.rs > img {
-        width: 100%;
-        height: 100%;
     }
 </style>
