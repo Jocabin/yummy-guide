@@ -6,7 +6,6 @@
 </script>
 
 
-<Header/>
 <section class="gridLayout">
     {#each data.data as restaurant (restaurant.id)}
         {#if restaurant.visibility}
