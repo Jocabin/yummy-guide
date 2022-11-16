@@ -3,17 +3,17 @@
 </script>
 
 <header>
-        <a href="/" class="logo">
+        <a href="/" class="logo" title="accueil" target="_self">
             <Logo/>
         </a>
             <nav>
-                <a href="/">Accueil</a>
-                <a href="/notre-concept">Notre concept</a>
-                <a href="/commerces-responsables">Les commerces responsables</a>
-                <a href="/blog">Blog</a>
-                <a href="/faq">FAQ</a>
-                <a href="/nous-contacter">Contact</a>
-                <a class="button" href="/ajouter-commerce">Ajouter un commerce</a>
+                <a href="/" title="Accueil" target="_self">Accueil</a>
+                <a href="/notre-concept" title="Notre concept" target="_self">Notre concept</a>
+                <a href="/commerces-responsables" title="Les commerces responsables" target="_self">Les commerces responsables</a>
+                <a href="/blog" title="Blog" target="_self">Blog</a>
+                <a href="/faq" title="F.A.Q" target="_self">F.A.Q</a>
+                <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
+                <a class="button" href="/ajouter-commerce" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
             </nav>
 </header>
 

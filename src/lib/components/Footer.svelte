@@ -1,85 +1,97 @@
 <script>
     import Logo from "$lib/components/Logo.svelte";
+    import Facebook from "$lib/components/Facebook.svelte";
+    import Instagram from "$lib/components/Instagram.svelte";
+    import Twitter from "$lib/components/Twitter.svelte";
 </script>
 
 <footer>
-    <div class="footerLine">
-        <a href="/">
+    <div>
+        <a href="/" class="logo" title="accueil" target="_self">
             <Logo/>
         </a>
-
-        <ul>
-            <li><a href="/notre-concept">Notre concept</a></li>
-            <li><a href="/commerces-responsables">Les commerces responsables</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/nous-contacter">Contact</a></li>
-        </ul>
-
-        <ul>
-            <li><a class="rs" href="https://facebook.com">
-            </a></li>
-
-            <li><a class="rs" href="https://instagram.com">
-            </a></li>
-
-            <li><a class="rs" href="https://twitter.com">
-            </a></li>
-        </ul>
+        <nav>
+            <a href="/notre-concept" title="Notre concept" target="_self">Notre concept</a>
+            <a href="/commerces-responsables" title="Les commerces responsables" target="_self">Les commerces
+                responsables</a>
+            <a href="/blog" title="Blog" target="_self">Blog</a>
+            <a href="/faq" title="F.A.Q" target="_self">F.A.Q</a>
+            <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
+        </nav>
+        <nav class="reseaux">
+            <a href="https://facebook.com" title="Facebook" target="_blank" rel="nofollow">
+                <Facebook/>
+            </a>
+            <a href="https://instagram.com" title="Instagram" target="_blank" rel="nofollow">
+                <Instagram/>
+            </a>
+            <a href="https://twitter.com" title="Twitter" target="_blank" rel="nofollow">
+                <Twitter/>
+            </a>
+        </nav>
     </div>
-
-    <ul>
-        <li><a href="/mentions-légales">Mentions légales</a></li>
-        <li><a href="/confidentialité">Politique de confidentialité</a></li>
-    </ul>
+    <nav>
+        <nav>
+            <a href="/mentions-legales" title="Mentions légales" target="_self">Mentions légales</a>
+            <a href="/politique-confidentialite" title="Politique de confidentialité" target="_self">Politique de
+                confidentialité</a>
+        </nav>
+    </nav>
 </footer>
 
-<style>
-    footer {
-        background-color: var(--dark-blue);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 2rem;
-        gap: 4rem;
-    }
+<style lang="sass">
+  footer
+    background-color: $dark-blue
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 4em
+    padding: 3em 1em 2em 1em
 
-    .footerLine {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-    }
+    div
+      display: flex
+      width: 100%
+      align-items: center
+      justify-content: space-around
 
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-    }
+      a.logo
+        max-width: 180px
 
-    ul a:not(.rs) {
-        color: var(--white);
-    }
+      nav
+        display: flex
 
-    a.rs {
-        text-decoration: none;
-        color: var(--white);
-        width: 2.5rem;
-        height: 2.5rem;
-        background-color: red;
-        display: block;
-    }
+        &:not(.reseaux)
+          gap: 20px
 
-    a.rs > img {
-        width: 100%;
-        height: 100%;
-    }
+        a
+          text-decoration: none
+          color: $white
+          font-size: 1em
+          font-weight: 700
+          transition: all ease-in-out 150ms
+
+          &:hover, &:focus
+            color: $orange
+
+        &.reseaux
+          display: flex
+          align-items: center
+          gap: 30px
+
+          a
+            max-width: 45px
+
+    nav
+      display: flex
+      gap: 20px
+
+      a
+        text-decoration: none
+        color: $white
+        font-size: .75em
+        font-weight: 700
+        transition: all ease-in-out 150ms
+
+        &:hover, &:focus
+          color: $orange
 </style>
