@@ -23,6 +23,8 @@
 <style>
     header {
         width: 100%;
+        background-color: var(--dark-blue);
+        padding: 1rem;
     }
 
     nav {
@@ -42,5 +44,10 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
+    }
+
+    nav ul a {
+        color: var(--white);
+        text-decoration: none;
     }
 </style>
