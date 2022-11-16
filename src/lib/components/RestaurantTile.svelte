@@ -24,6 +24,7 @@
 
     article > img {
         background-color: #ddd;
+        object-fit: cover;
         width: 100%;
         aspect-ratio: 16 / 9;
         border-radius: 1rem;
