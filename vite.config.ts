@@ -5,4 +5,4 @@ const config: UserConfig = {
 	plugins: [sveltekit()]
 };
 
-export default config;
+export default config

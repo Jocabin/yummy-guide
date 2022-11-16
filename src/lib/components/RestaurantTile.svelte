@@ -1,5 +1,14 @@
 <script>
     export let info;
+    import {onMount} from "svelte";
+    import {getLocation} from "$lib/distancematrix.js";
+    let distance;
+
+    onMount(()=>{
+        getLocation(44.85383665167368, -0.5668104057436363).then((data)=>{
+            distance = data;
+        });
+    })
 </script>
 
 <article>
@@ -7,6 +16,7 @@
 
     <section>
         <h2>{info.name}</h2>
+        {Math.round((distance * 100) / 100)+ " km"}
         <p>{info.description}</p>
 <!--        todo add tags-->
     </section>
@@ -28,6 +38,7 @@
         width: 100%;
         aspect-ratio: 16 / 9;
         border-radius: 1rem;
+        object-fit: cover;
     }
 
     section > h2 {
