@@ -1,81 +1,84 @@
 <script>
+    import TeamItem from "$lib/components/TeamItem.svelte";
 
+    export let data;
 </script>
-<section class="texteImage">
-    <div class="wrapper-section">
-        <div class="istxt">
-            <h1>Notre concept</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque delectus expedita fugiat itaque iusto
-                placeat possimus provident quae, quas. Ad est itaque molestiae nostrum quibusdam recusandae repudiandae
-                sunt velit.</p>
-            <p>Facere fuga non perspiciatis quam quis tempora veniam! Ad blanditiis ducimus est ex facere facilis
-                mollitia, nam nulla obcaecati optio perspiciatis quae quas quia quod recusandae rem sint totam,
-                ullam!</p>
-        </div>
-        <picture>
-            <img src="https://www.santevet.com/upload/admin/images/article/PMO/FICHES%20RACES/CHATS/chat_de_gouttiere_assurance_sant%C3%A9vet.jpg"
-                 alt="">
-        </picture>
-    </div>
-</section>
-<section class="texte2">
-    <div class="wrapper-section">
-        <h2>Nos missions</h2>
-        <div class="istxt">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam corporis exercitationem hic,
-                possimus quisquam similique sint! Accusantium alias asperiores commodi, dolores et nisi obcaecati
-                provident quidem tenetur voluptate! Impedit.</p>
-        </div>
-        <div class="istxt">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam corporis exercitationem hic,
-                possimus quisquam similique sint! Accusantium alias asperiores commodi, dolores et nisi obcaecati
-                provident quidem tenetur voluptate! Impedit.</p>
-        </div>
-    </div>
-</section>
-<section class="equipe">
-    <div class="wrapper-section">
-        <h2>Notre équipe</h2>
-        <ul>
 
-        </ul>
+<section class="concept">
+    <div>
+        <h2>Notre concept</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorum enim itaque, mollitia nam quasi
+            unde veniam? Ad, eaque eius error, eveniet facilis id in, iste libero nulla officia sapiente.
+        </p>
     </div>
+
+    <img src="" alt="fuck concept">
 </section>
 
-<style lang="sass">
-  section
-    width: 100%
-    padding-block: 2em
+<section class="missions">
+    <h2>Notre mission</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet cum facilis itaque laborum nulla quas quis repellendus voluptatum! Atque cum cupiditate deserunt excepturi incidunt possimus quae? Accusantium, consectetur, odio?</p>
+</section>
 
-    div.wrapper-section
-      max-width: $maxWidth
-      margin-inline: auto
-      display: grid
-      grid-template-columns: repeat(2, 1fr)
-      gap: 1em 5em
-      picture
-        display: block
-        border-radius: 10px
-        overflow: hidden
+<section class="team">
+    <h2>Notre équipe</h2>
+    <ul class="gridLayout">
+        {#each data.team as member (member.id)}
+            <TeamItem name={member.name} job={member.job} />
+        {/each}
+    </ul>
+</section>
 
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-          object-position: center center
+<style>
+    section {
+        padding: 0 2rem;
+    }
+    .gridLayout {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 200px);
+        grid-template-rows: repeat(auto-fill, 300px);
+        gap: 4rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+    }
 
-      h2
-        grid-column: span 2
+    .concept {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        background-color: var(--green);
+        width: 100%;
+    }
 
-    &.texteImage
-      background-color: $green
-    &.equipe
-      background-color: $light-blue
-      display: flex
-      flex-direction: column
+    .concept > div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 50%;
+    }
 
-      h2
-          grid-column: span 6
-          div.wrapper-section
-            gap: 10em
+    .concept > img {
+        background-color: #ccc;
+        max-width: 50%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .team {
+        width: 100%;
+        text-align: center;
+        background-color: var(--light-blue);
+        padding: 4rem 1rem;
+    }
+
+    .team > h2 {
+        margin-bottom: 4rem;
+    }
 </style>
