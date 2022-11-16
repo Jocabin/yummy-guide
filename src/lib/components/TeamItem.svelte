@@ -25,4 +25,8 @@
         background-color: #ccc;
         border-radius: 100%;
     }
+
+    p:not(.title) {
+        margin: 0;
+    }
 </style>

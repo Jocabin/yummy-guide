@@ -73,5 +73,12 @@
 
     .team {
         width: 100%;
+        text-align: center;
+        background-color: var(--light-blue);
+        padding: 4rem 1rem;
+    }
+
+    .team > h2 {
+        margin-bottom: 4rem;
     }
 </style>
