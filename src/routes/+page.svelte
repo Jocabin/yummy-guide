@@ -1,1 +1,9 @@
-<h1>Hello World</h1>
+
+<script>
+  export let data;
+
+  let restaurants = data;
+</script>
+
+<p>homepage</p>
+
