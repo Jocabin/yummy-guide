@@ -9,39 +9,46 @@
             distance = data;
         });
     })
+    console.log(info)
 </script>
 
 <article>
-    <img src={info.thumbnail} alt={`Image de la fiche restaurant "${info.name}"`}>
-
-    <section>
-        <h2>{info.name}</h2>
-        {Math.round(distance * 100) / 100+ " km"}
-        <p>{info.description}</p>
-<!--        todo add tags-->
-    </section>
+    <picture>
+        <img src={info.thumbnail} alt={info.name}>
+    </picture>
+    <div class="txt">
+        <span class="title">{info.name}</span>
+        <p class="description">
+            {info.description}
+        </p>
+        <a href={`/commerces-responsables/`+info.url} class="more">En savoir plus</a>
+    </div>
 </article>
 
-<style>
-    article {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-        justify-content: flex-start;
-        overflow: hidden;
-    }
+<style lang="sass">
+    article
+      display: flex
+      flex-direction: column
+      gap: 1em
 
-    article > img {
-        background-color: #ddd;
-        object-fit: cover;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border-radius: 1rem;
-        object-fit: cover;
-    }
+      picture
+        display: block
+        width: 100%
+        height: 200px
+        overflow: hidden
+        border-radius: 10px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          object-position: center center
+      div.txt
+        span.title
+          font-family: 'Forma DJR Micro'
+          font-weight: 500
+          font-size: 24px
+        p.description
+          font-weight: 400
 
-    section > h2 {
-        margin: 0;
-    }
+
 </style>

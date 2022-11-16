@@ -79,7 +79,7 @@
           gap: 30px
 
           a
-            max-width: 45px
+            max-width: 30px
 
     nav
       display: flex

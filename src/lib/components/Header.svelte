@@ -13,7 +13,7 @@
                 <a href="/blog" title="Blog" target="_self">Blog</a>
                 <a href="/faq" title="F.A.Q" target="_self">F.A.Q</a>
                 <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
-                <a class="button" href="/ajouter-commerce" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
+                <a class="button" href="/commerces-responsables/ajouter" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
             </nav>
 </header>
 
@@ -41,7 +41,7 @@
 
           &.button
             font-size: 1em
-            padding: 1em 2em
+            padding: .75em 2em
             background-color: rgba($orange, 1)
             color: $white
             text-align: center
