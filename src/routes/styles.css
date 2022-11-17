@@ -70,4 +70,12 @@ h3 {
     border-radius: 100rem;
     font-size: 16px;
     font-weight: 400;
+    border: 2px solid var(--orange);
+    cursor: pointer;
+    transition: 200ms all ease;
+}
+
+.button:hover, .button:focus {
+    background-color: transparent;
+    color: var(--orange);
 }

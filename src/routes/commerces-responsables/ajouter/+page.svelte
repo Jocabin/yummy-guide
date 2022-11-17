@@ -17,7 +17,10 @@
 
 <style lang="sass">
   section
+    width: 100%
+
     div.wrapper-section
       max-width: $maxWidth
       margin-inline: auto
+      width: 100%
 </style>

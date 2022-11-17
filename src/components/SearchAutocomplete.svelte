@@ -29,7 +29,7 @@
         }
     }
 </script>
-<input {...$$restProps} on:focus={autocompleteVisibility = true} on:input={e => autocomplete(e)} placeholder="recherche" required
+<input {...$$restProps} on:focus={autocompleteVisibility = true} on:input={e => autocomplete(e)} placeholder="10 rue de la beauté" required
        type="text" value={search.label}>
 {#if autocompleteList.length > 0 && autocompleteVisibility}
     <ul>
@@ -38,3 +38,14 @@
         {/each}
     </ul>
 {/if}
+
+<style>
+    input {
+        display: inline-block;
+        padding: .5em;
+        font-size: 1em;
+        border: none;
+        border-bottom: 2px solid var(--orange);
+        background-color: rgba(var(--black), .0);
+    }
+</style>
