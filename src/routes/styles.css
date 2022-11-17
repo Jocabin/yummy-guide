@@ -14,7 +14,7 @@
     --orange: #D26E62;
     --green: #BACD5A;
 
-    --title-font: 700 1.5rem forma-djr-micro, sans-serif; /* clamp(2rem, 10vw, 3rem) */
+    --title-font: 700 2rem forma-djr-micro, sans-serif; /* clamp(2rem, 10vw, 3rem) */
     --text-font: 1rem forma-djr-micro, sans-serif;
     --btn-font: 1rem font_bold, sans-serif;
 
@@ -49,6 +49,11 @@ div[id='app'] {
 
 h1 {
     font: var(--title-font);
+}
+
+h2 {
+    font: var(--title-font);
+    font-size: 1.5rem;
 }
 
 .button {
