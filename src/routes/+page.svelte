@@ -85,6 +85,18 @@
   section
     width: 100%
 
+    h1
+      animation: ease-in-out appear 1s 500ms normal
+
+    p.baseline
+      animation: ease-in-out appear 1s normal
+      @keyframes appear
+        from
+          transform: translateY(10px)
+          opacity: 0
+        to
+          transform: translateY(0)
+          opacity: 1
 
     h2, p
       text-align: center
@@ -179,6 +191,22 @@
           align-items: center
           color: white
           font-weight: bold
+          animation: ease-in-out appear 1s normal
+
+          &:nth-of-type(2)
+            animation: ease-in-out appear 1s normal 300ms
+
+          &:nth-of-type(3)
+            animation: ease-in-out appear 1s normal 600ms
+
+          @keyframes appear
+            0%
+              transform: translateX(-10px)
+              opacity: 0
+
+            100%
+              transform: translateX(0px)
+              opacity: 1
 
           span
             font-size: 4em
