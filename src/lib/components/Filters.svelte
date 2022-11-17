@@ -103,6 +103,8 @@
 </section>
 
 <style lang="sass">
+  option
+    color: $black
   section
     margin-block-end: 3em
     display: flex
