@@ -84,7 +84,6 @@
     }
 
     .concept > picture {
-        background-color: #ccc;
         aspect-ratio: 16 / 9;
         min-width: 400px;
         max-width: 500px;
