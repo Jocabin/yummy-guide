@@ -56,6 +56,11 @@ h2 {
     font-size: 1.5rem;
 }
 
+h3 {
+    font: var(--title-font);
+    font-size: 1.20rem;
+}
+
 .button {
     padding: 1em 2em;
     background-color: var(--orange);

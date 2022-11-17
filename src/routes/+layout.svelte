@@ -3,12 +3,19 @@
 
     import Footer from "../lib/components/Footer.svelte";
     import Header from "../lib/components/Header.svelte";
+    import Cookie from "$lib/components/Cookie.svelte";
+
+    import {cookie} from "$lib/store";
 </script>
 
 <Header/>
 
 <main>
     <slot></slot>
+
+    {#if false}
+        <Cookie/>
+    {/if}
 </main>
 
 <Footer/>

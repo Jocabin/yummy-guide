@@ -3,7 +3,9 @@
 
     export let data;
 
-    let restaurants = data;
+    let restaurants = data.restaurants;
+
+    console.log(data.restaurants)
 </script>
 
 <section class="hero">
@@ -16,18 +18,66 @@
     </div>
 
     <ul class="keyNumber">
-        <li>340</li>
-        <li>340</li>
-        <li>340</li>
+        <li>
+            <span>50</span>
+            <span>Articles en ligne</span>
+        </li>
+        <li>
+            <span>50</span>
+            <span>Articles en ligne</span>
+        </li>
+        <li>
+            <span>50</span>
+            <span>Articles en ligne</span>
+        </li>
     </ul>
+</section>
+
+<section class="restos">
+    <h2>Notre séléction personalisée</h2>
+
+    <h3>Épicerie</h3>
+    <div class="gridLayout">
+        {#each restaurants as resto (resto.id)}
+            <!--epicerie-->
+            {#if resto.type === 4}
+                <div class="cardResto">{resto.name}</div>
+            {/if}
+        {/each}
+    </div>
+
+    <h3>Restaurant</h3>
+    <div class="gridLayout">
+
+        {#each restaurants as resto (resto.id)}
+            <!--resto-->
+            {#if resto.type === 2}
+                <div class="cardResto">{resto.name}</div>
+            {/if}
+        {/each}
+    </div>
+
+    <h3>Café</h3>
+    <div class="gridLayout">
+
+        {#each restaurants as resto (resto.id)}
+            <!--café/salons-->
+            {#if resto.type === 5}
+                <div class="cardResto">{resto.name}</div>
+            {/if}
+        {/each}
+    </div>
 </section>
 
 <section class="texte">
     <div>
         <h2>Tire 2</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorum enim itaque, mollitia nam quasi
-            unde veniam? Ad, eaque eius error, eveniet facilis id in, iste libero nulla officia sapiente.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorum enim
+            itaque,
+            mollitia nam quasi
+            unde veniam? Ad, eaque eius error, eveniet facilis id in, iste libero nulla officia
+            sapiente.
         </p>
     </div>
 
@@ -35,6 +85,26 @@
 </section>
 
 <style>
+    .gridLayout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        padding: 0;
+        justify-content: flex-start;
+        overflow: auto;
+        margin: 0 0 4rem 0;
+    }
+
+    .cardResto {
+        background-color: var(--white);
+        min-width: 200px;
+        height: 300px;
+        border-radius: 20px;
+    }
+
     .hero {
         display: flex;
         flex-direction: row;
@@ -42,6 +112,16 @@
         align-items: center;
         width: 100%;
         padding: 4rem;
+    }
+
+    .restos {
+        background-color: var(--orange);
+        width: 100%;
+        padding: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .heroContent {
@@ -70,6 +150,10 @@
         margin: 0;
         padding: 2rem 1rem;
         background-color: var(--light-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .keyNumber > li:nth-child(2) {
