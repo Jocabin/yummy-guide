@@ -87,11 +87,11 @@
   section
     width: 100%
 
-    h1
-      animation: ease-in-out appear 1s 500ms normal
+    //h1
+      //animation: ease-in-out appear 1s 500ms normal
 
     p.baseline
-      animation: ease-in-out appear 1s normal
+      //animation: ease-in-out appear 1s normal
       @keyframes appear
         from
           transform: translateY(10px)
@@ -193,13 +193,13 @@
           align-items: center
           color: white
           font-weight: bold
-          animation: ease-in-out appear 1s normal
+          //animation: ease-in-out appear 1s normal
 
-          &:nth-of-type(2)
-            animation: ease-in-out appear 1s normal 300ms
+          //&:nth-of-type(2)
+            //animation: ease-in-out appear 1s normal 300ms
 
-          &:nth-of-type(3)
-            animation: ease-in-out appear 1s normal 600ms
+          //&:nth-of-type(3)
+            //animation: ease-in-out appear 1s normal 600ms
 
           @keyframes appear
             0%
