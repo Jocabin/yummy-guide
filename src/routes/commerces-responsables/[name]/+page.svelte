@@ -2,6 +2,7 @@
     //todo map à faire
     import {supabase} from "$lib/supabaseClient";
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+    import image from "$lib/assets/ronronblog.jpeg"
 
     export let data;
     let pageData = data.restaurant[0];
@@ -57,7 +58,48 @@
     </iframe>
 </section>
 
+{#if pageData.id === 22}
+    <section class="blog">
+        <h2>Interview</h2>
+
+        <img src={image} alt="">
+        <h3>Pourquoi avoir décidé de servir uniquement des produits végétariens et vegans ?</h3>
+        <p>
+            Nous sommes nous même végétariens et cela correspond à nos valeurs.
+            Nous voulions créer un lieu qui nous ressemble, qui soit respectueux des animaux et de la planête.
+        </p>
+        <h3>Où vous fournissez vous en aliments ?
+            Avez-vous eu une démarche éco-responsable
+            lors de ce choix ?</h3>
+
+        <p>Nous achetons nos produits vegan (seitan, chantilly vegan...) dans une petite boutique spécialisé dans les
+            aliments vegan (Graines et Cailloux). Nos thés proviennent également d'une boutique indépendante (Un Air de
+            Thé) qui veille à sourcer leurs produits de manière écoresponsable et dans le respect de l'humain. Le reste
+            provient de Metro.</p>
+
+        <h3>Quels actions éco-responsables avez-vous mis en place dans votre bar à chat ?</h3>
+        <p>Nous avons meublé quasiment tout le café avec des canapés et des tables récupérées (chez des mamies, à Emaus, dans des brocantes...). Nous évitons au maximum le gaspillage alimentaire et utilisons des appli anti-gaspi comme Phenix et Too Good to Go. Nous sommes aussi Famille d'Accueil pour des chats et les hébergeons jusqu'à ce qu'ils trouvent leurs adoptants.</p>
+        <h3>Quelle place a eu l'éco-responsabilité dans la création de votre bar à chat ? Avez-vous été inspiré par d'autres commerces ? Votre vécu a-t-il eu un impact ?</h3>
+        <p>Nous avons meublé quasiment tout le café avec des canapés et des tables récupérées (chez des mamies, à Emaus, dans des brocantes...). Nous évitons au maximum le gaspillage alimentaire et utilisons des appli anti-gaspi comme Phenix et Too Good to Go. Nous sommes aussi Famille d'Accueil pour des chats et les hébergeons jusqu'à ce qu'ils trouvent leurs adoptants.</p>
+    </section>
+{/if}
+
 <style lang="sass">
+  .blog
+    padding: 2rem
+
+    p, h3
+      margin: 0
+
+    p
+      margin-bottom: 4rem
+
+    h3
+      margin-bottom: 1rem
+    img
+      float: left
+      width: 500px
+      margin: 0 4rem 1rem 0
   #map
     height: 600px
     width: 80%
