@@ -41,7 +41,9 @@
         {#each restaurants as resto (resto.id)}
             <!--epicerie-->
             {#if resto.type === 4}
-                <div class="cardResto">{resto.name}</div>
+                <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
+                    <span>{resto.name}</span>
+                </div>
             {/if}
         {/each}
     </div>
@@ -52,7 +54,9 @@
         {#each restaurants as resto (resto.id)}
             <!--resto-->
             {#if resto.type === 2}
-                <div class="cardResto">{resto.name}</div>
+                <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
+                    <span>{resto.name}</span>
+                </div>
             {/if}
         {/each}
     </div>
@@ -63,7 +67,9 @@
         {#each restaurants as resto (resto.id)}
             <!--café/salons-->
             {#if resto.type === 5}
-                <div class="cardResto">{resto.name}</div>
+                <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
+                    <span>{resto.name}</span>
+                </div>
             {/if}
         {/each}
     </div>
@@ -103,6 +109,19 @@
         min-width: 200px;
         height: 300px;
         border-radius: 20px;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+    }
+
+    .cardResto > span {
+        background-color: var(--light-blue);
+        width: 100%;
+        text-align: center;
+        padding: .5rem 0;
     }
 
     .hero {
