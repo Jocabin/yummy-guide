@@ -7,6 +7,14 @@
     let pageData = data.restaurant[0];
     let tags = [];
 
+    console.log(pageData)
+
+    let point = {
+        address: pageData.address,
+        lat: pageData.latitude,
+        long: pageData.longitude
+    }
+
     async function getTag(itemId) {
         const {data, error} = await supabase.from('tags').select().eq("id", itemId);
         error && console.error(error)
@@ -40,12 +48,30 @@
         <p>{pageData.description}</p>
     </div>
 </section>
-<section class="map">
-    <div class="wrapper-section">
-    </div>
+<section id="map">
+    <iframe
+            width="450"
+            height="250"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyA0n6tlDmXklI2kMKIxLOXn-3_V0cZDeR0&q=${point.address}&center=${point.lat},${point.long}`}
+            allowfullscreen>
+    </iframe>
 </section>
 
 <style lang="sass">
+  #map
+    height: 600px
+    width: 80%
+    padding: 2rem
+    display: flex
+    align-self: center
+    justify-content: center
+
+    iframe
+      width: 100%
+      height: 100%
+
   .tags
     padding: 0
     margin: 3rem 0
