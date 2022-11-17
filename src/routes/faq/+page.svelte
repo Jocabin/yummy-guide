@@ -28,4 +28,27 @@
         align-content: flex-start;
         width: 100%;
     }
+
+    details summary {
+        padding: 1.5rem 2rem;
+        background-color: var(--light-blue);
+        border-radius: 1.5rem;
+        color: var(--white);
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    details[open] {
+        border: var(--light-blue) 2px solid;
+        border-radius: 1.5rem;
+    }
+
+    details[open] summary {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    details[open] p {
+        padding: 0 2rem;
+    }
 </style>
