@@ -145,11 +145,13 @@
 <form on:submit|preventDefault={()=>submitForm()}>
     <p>
         <label for="name">Nom</label>
-        <input id="name" on:input={(e)=>nameForm = e.target.value} required type="text" value={nameForm}>
+        <input placeholder="Le nom du resto" id="name" on:input={(e)=>nameForm = e.target.value} required type="text"
+               value={nameForm}>
     </p>
     <p>
         <label for="site">Site</label>
-        <input id="site" on:input={(e)=>siteUrlForm = e.target.value} type="url" value={siteUrlForm}>
+        <input placeholder="https://site.fr" id="site" on:input={(e)=>siteUrlForm = e.target.value} type="url"
+               value={siteUrlForm}>
     </p>
     <p>
         <label for="description">Description</label>
@@ -157,7 +159,7 @@
                   value={descriptionForm}></textarea>
     </p>
     <p>
-        <label for="address">Address</label>
+        <label for="address">Adresse</label>
         <SearchAutocomplete {getItem} id="address"/>
     </p>
     <p>
@@ -168,7 +170,7 @@
     <p>
         <label for="category">Style</label>
         <select id="category" name="category" on:input={(e)=>styleForm = e.target.value} required>
-            <option disabled selected="selected" value="">Style</option>
+            <option disabled selected="selected" value="">-- Sélectionner un style --</option>
             {#each categories as category}
                 <option value={category.id}>{category.name}</option>
             {/each}
@@ -177,42 +179,51 @@
     <p>
         <label for="types">Types</label>
         <select id="types" name="types" on:input={(e)=>typeForm = e.target.value} required>
-            <option disabled selected="selected" value="">Types</option>
+            <option disabled selected="selected" value="">-- Sélectionner un type --</option>
             {#each types as type}
                 <option value={type.id}>{type.name}</option>
             {/each}
         </select>
     </p>
     <fieldset class="tags">
-        {#each tags as tag (tag.id)}
-            <FormTag tagInfo={tag} checkedAction={(e)=>tagsManager(e)}></FormTag>
-        {/each}
+        <p>Tags</p>
+        <div>
+            {#each tags as tag (tag.id)}
+                <FormTag tagInfo={tag} checkedAction={(e)=>tagsManager(e)}></FormTag>
+            {/each}
+        </div>
     </fieldset>
     <fieldset class="livraison">
-        <p>
-            <label for=none>Sur place</label>
-            <input id="none" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Sur place">
-        </p>
-        <p>
-            <label for=deliverable>A emporter</label>
-            <input id="deliverable" on:click={(e)=>deliveryManager(e)} type="checkbox" value="A emporter">
-        </p>
-        <p>
-            <label for=athome>Livraison</label>
-            <input id="athome" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Livraison">
-        </p>
+        <p>Mode de livraison</p>
+        <div>
+            <p>
+                <input id="none" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Sur place">
+                <label for=none>Sur place</label>
+            </p>
+            <p>
+                <input id="deliverable" on:click={(e)=>deliveryManager(e)} type="checkbox" value="A emporter">
+                <label for=deliverable>A emporter</label>
+            </p>
+            <p>
+                <input id="athome" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Livraison">
+                <label for=athome>Livraison</label>
+            </p>
+        </div>
     </fieldset>
     <p>
         <label for="img">Image</label>
         <input accept=".jpg, .jpeg, .png" id="img" on:input={(e)=>imageLoading(e)} required type="file">
     </p>
-    <button class="button" type="submit">Soumettre</button>
+    <button class="button" type="submit">Envoyer</button>
 </form>
 
 <style lang="sass">
   form
-    gap: 1em 10em
+    display: flex
+    flex-direction: column
+    gap: 2em
     flex-wrap: wrap
+    width: 100%
 
     p, fieldset
       border: none
@@ -232,4 +243,51 @@
         border: none
         border-bottom: 2px solid $orange
         background-color: rgba($black, .0)
+
+    fieldset.livraison
+      padding: 0
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      width: fit-content
+      gap: 2rem
+      overflow: hidden
+
+      div
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        border-radius: 20px
+        border: solid 2px $orange
+        overflow: hidden
+
+      p
+        border-radius: 0
+        cursor: pointer
+
+        & > label
+          padding: 1rem
+          border-radius: 0
+          cursor: pointer
+
+      [type="checkbox"]
+        display: none
+
+      [type="checkbox"]:checked + label
+        background-color: $orange
+        border-radius: 0
+
+    fieldset.tags
+      padding: 0
+      display: flex
+      flex-direction: column
+      width: 100%
+
+      div
+        width: 100%
+        display: flex
+        flex-flow: row wrap
+        gap: 0 1.5rem
 </style>
