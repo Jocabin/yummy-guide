@@ -86,6 +86,7 @@
     padding: 10px 10px 20px 10px
     border-radius: 10px
     transition: all ease-in-out 300ms
+    width: 100%
 
     &:hover, &:focus
       background-color: rgba(white, 1)
