@@ -58,7 +58,7 @@
             .insert([
                 {
                     name: nameForm,
-                    price_indicator : priceForm,
+                    price_indicator: priceForm,
                     description: descriptionForm,
                     site_url: siteUrlForm || null,
                     longitude: address.lng || null,
@@ -75,7 +75,7 @@
         error && console.error(error)
         let object = {
             name: nameForm,
-            price_indicator : priceForm,
+            price_indicator: priceForm,
             description: descriptionForm,
             site_url: siteUrlForm || null,
             longitude: address.lng || null,
@@ -141,27 +141,29 @@
 <form on:submit|preventDefault={()=>submitForm()}>
     <p>
         <label for="name">Nom</label>
-        <input type="text" id="name" value={nameForm} on:input={(e)=>nameForm = e.target.value} required>
-    </p>
-    <p>
-        <label for="description">Description</label>
-        <textarea id="description" value={descriptionForm} on:input={(e)=>descriptionForm = e.target.value} required></textarea>
+        <input id="name" on:input={(e)=>nameForm = e.target.value} required type="text" value={nameForm}>
     </p>
     <p>
         <label for="site">Site</label>
-        <input type="url" id="site" value={siteUrlForm} on:input={(e)=>siteUrlForm = e.target.value}>
+        <input id="site" on:input={(e)=>siteUrlForm = e.target.value} type="url" value={siteUrlForm}>
+    </p>
+    <p>
+        <label for="description">Description</label>
+        <textarea id="description" on:input={(e)=>descriptionForm = e.target.value} required
+                  value={descriptionForm}></textarea>
     </p>
     <p>
         <label for="address">Address</label>
-        <SearchAutocomplete id="address" {getItem}/>
+        <SearchAutocomplete {getItem} id="address"/>
     </p>
     <p>
         <label for="price">Indicateur de prix</label>
-        <span><bdi>€</bdi><input type="range" min="1" max="3" id="price" value={priceForm} on:input={(e)=>priceForm = e.target.value} required><bdi>€€€</bdi></span>
+        <span><bdi>€</bdi><input id="price" max="3" min="1" on:input={(e)=>priceForm = e.target.value} required
+                                 type="range" value={priceForm}><bdi>€€€</bdi></span>
     </p>
     <p>
         <label for="category">Style</label>
-        <select name="category" id="category" on:input={(e)=>styleForm = e.target.value} required>
+        <select id="category" name="category" on:input={(e)=>styleForm = e.target.value} required>
             <option disabled selected="selected" value="">Style</option>
             {#each categories as category}
                 <option value={category.id}>{category.name}</option>
@@ -170,7 +172,7 @@
     </p>
     <p>
         <label for="types">Types</label>
-        <select name="types" id="types" on:input={(e)=>typeForm = e.target.value} required>
+        <select id="types" name="types" on:input={(e)=>typeForm = e.target.value} required>
             <option disabled selected="selected" value="">Types</option>
             {#each types as type}
                 <option value={type.id}>{type.name}</option>
@@ -180,7 +182,8 @@
     <fieldset class="tags">
         {#each tags as tag}
             <p>
-                <label for={tag.name}>{tag.name}</label>
+                <label for={tag.name} on:click={(e)=> e.target.classList.toggle("active")}
+                       class="tag">{tag.name}</label>
                 <input type="checkbox" value={tag.id} id={tag.name} on:click={(e)=>tagsManager(e)}>
             </p>
         {/each}
@@ -188,21 +191,61 @@
     <fieldset class="livraison">
         <p>
             <label for=none>Sur place</label>
-            <input type="checkbox" value="Sur place" id="none" on:click={(e)=>deliveryManager(e)}>
+            <input id="none" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Sur place">
         </p>
         <p>
             <label for=deliverable>A emporter</label>
-            <input type="checkbox" value="A emporter" id="deliverable" on:click={(e)=>deliveryManager(e)}>
+            <input id="deliverable" on:click={(e)=>deliveryManager(e)} type="checkbox" value="A emporter">
         </p>
         <p>
             <label for=athome>Livraison</label>
-            <input type="checkbox" value="Livraison" id="athome" on:click={(e)=>deliveryManager(e)}>
+            <input id="athome" on:click={(e)=>deliveryManager(e)} type="checkbox" value="Livraison">
         </p>
     </fieldset>
-
     <p>
         <label for="img">Image</label>
-        <input id="img" type="file" accept=".jpg, .jpeg, .png" on:input={(e)=>imageLoading(e)} required>
+        <input accept=".jpg, .jpeg, .png" id="img" on:input={(e)=>imageLoading(e)} required type="file">
     </p>
-    <button type="submit">Soumettre</button>
+    <button class="button" type="submit">Soumettre</button>
 </form>
+
+<style lang="sass">
+  form
+    gap: 1em 10em
+    flex-wrap: wrap
+
+    p, fieldset
+      border: none
+      display: flex
+      flex-direction: column
+      gap: .5em
+      margin: 0
+
+      &.tags
+        flex-direction: row
+        flex-wrap: wrap
+
+      input, textarea
+        display: inline-block
+        padding: .5em
+        font-size: 1em
+        border: none
+        border-bottom: 2px solid $orange
+        background-color: rgba($black, .0)
+
+        &[type="checkbox"]
+          display: none
+
+      label
+        &.tag
+          color: $orange
+          border: 1px solid $orange
+          display: inline-block
+          border-radius: 100px
+          padding: .25em 1em
+          transition: all ease-in-out 150ms
+
+          &:hover, &:focus
+            background-color: rgba($black, .05)
+
+</style>
