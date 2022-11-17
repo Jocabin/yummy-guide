@@ -1,5 +1,6 @@
 <script>
     import Logo from "$lib/components/Logo.svelte"
+    import MenuItem from "$lib/components/MenuItem.svelte";
 </script>
 
 <header>
@@ -7,12 +8,12 @@
             <Logo/>
         </a>
             <nav>
-                <a href="/" title="Accueil" target="_self">Accueil</a>
-                <a href="/notre-concept" title="Notre concept" target="_self">Notre concept</a>
-                <a href="/commerces-responsables" title="Les commerces responsables" target="_self">Les commerces responsables</a>
-                <a href="/blog" title="Blog" target="_self">Blog</a>
-                <a href="/faq" title="F.A.Q" target="_self">F.A.Q</a>
-                <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
+                <MenuItem href="/">Accueil</MenuItem>
+                <MenuItem href="/notre-concept">Notre concept</MenuItem>
+                <MenuItem href="/commerces-responsables">Commerces responsables</MenuItem>
+                <MenuItem href="/blog">FAQ</MenuItem>
+                <MenuItem href="/nous-contacter">Nous contacter</MenuItem>
+
                 <a class="button" href="/commerces-responsables/ajouter" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
             </nav>
 </header>
@@ -30,28 +31,22 @@
         display: flex
         align-items: center
         gap: 2em
-        a
-          text-decoration: none
-          color: $white
-          font-size: 1em
-          font-weight: 700
-          transition: all ease-in-out 150ms
-          &:hover, &:focus
-            color: $orange
 
-          &.button
-            font-size: 1em
-            padding: .75em 2em
-            background-color: rgba($orange, 1)
-            color: $white
-            text-align: center
-            text-decoration: none
-            border-radius: 100rem
-            transition: all ease-in-out 150ms
-            border: 2px solid $orange
-            &:hover, &:focus
-              background-color: rgba($orange, 0)
-              color: rgba($orange, 1)
-              font-weight: 700
+      .button
+        font-size: 1em
+        padding: .75em 2em
+        background-color: rgba($orange, 1)
+        color: $white
+        text-align: center
+        text-decoration: none
+        border-radius: 100rem
+        transition: all ease-in-out 150ms
+        border: 2px solid $orange
+        font-weight: 700
+
+        &:hover, &:focus
+          background-color: rgba($orange, 0)
+          color: rgba($orange, 1)
+          font-weight: 700
 
 </style>

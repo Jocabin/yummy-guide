@@ -6,7 +6,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    font: var(--text-font);
 
     --black: #161414;
     --light-blue: #71B2B4;
@@ -15,8 +14,8 @@
     --orange: #D26E62;
     --green: #BACD5A;
 
-    --title-font: bold 1.5rem font_bold, serif; /* clamp(2rem, 10vw, 3rem) */
-    --text-font: 1rem font_regular, sans-serif;
+    --title-font: 700 1.5rem forma-djr-micro, sans-serif; /* clamp(2rem, 10vw, 3rem) */
+    --text-font: 1rem forma-djr-micro, sans-serif;
     --btn-font: 1rem font_bold, sans-serif;
 
     --border: 0.25rem solid var(--black);
@@ -25,6 +24,7 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font: var(--text-font);
 }
 
 html,
@@ -45,6 +45,10 @@ div[id='app'] {
     justify-content: center;
     width: 100%;
     min-height: 100%;
+}
+
+h1 {
+    font: var(--title-font);
 }
 
 .button {
