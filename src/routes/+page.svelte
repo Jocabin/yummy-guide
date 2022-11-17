@@ -2,6 +2,7 @@
     import Button from "../lib/components/Button.svelte";
 
     export let data;
+    import articleImage from "$lib/assets/ronrons.jpeg"
 
     let restaurants = data.restaurants;
 
@@ -20,15 +21,15 @@
     <ul class="keyNumber">
         <li>
             <span>50</span>
-            <span>Articles en ligne</span>
+            <span>Articles du blog</span>
         </li>
         <li>
-            <span>50</span>
-            <span>Articles en ligne</span>
+            <span>73</span>
+            <span>Commerces référencés</span>
         </li>
         <li>
-            <span>50</span>
-            <span>Articles en ligne</span>
+            <span>23</span>
+            <span>Commerçants interviewés</span>
         </li>
     </ul>
 </section>
@@ -39,7 +40,6 @@
     <h3>Épicerie</h3>
     <div class="gridLayout">
         {#each restaurants as resto (resto.id)}
-            <!--epicerie-->
             {#if resto.type === 4}
                 <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
                     <span>{resto.name}</span>
@@ -50,9 +50,7 @@
 
     <h3>Restaurant</h3>
     <div class="gridLayout">
-
         {#each restaurants as resto (resto.id)}
-            <!--resto-->
             {#if resto.type === 2}
                 <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
                     <span>{resto.name}</span>
@@ -63,9 +61,7 @@
 
     <h3>Café</h3>
     <div class="gridLayout">
-
         {#each restaurants as resto (resto.id)}
-            <!--café/salons-->
             {#if resto.type === 5}
                 <div class="cardResto" style={`background-image: url(${resto.thumbnail});`}>
                     <span>{resto.name}</span>
@@ -77,17 +73,16 @@
 
 <section class="texte">
     <div>
-        <h2>Tire 2</h2>
+        <h2>Les ronrons des chartrons</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorum enim
-            itaque,
-            mollitia nam quasi
-            unde veniam? Ad, eaque eius error, eveniet facilis id in, iste libero nulla officia
-            sapiente.
+            Les ronrons des chartrons est un bar à chat engagé pour l’environnement. Retrouvez les sur les quais des
+            chartrons pour siiroter une limonade en compagnie de leurs adorables chats.
+
+            Comment s’engagent-ils ? Découvrez le en lisant notre “interview du mois” !
         </p>
     </div>
 
-    <img src="" alt="fuck homepage">
+    <img src={articleImage} alt="Image ronron">
 </section>
 
 <style>
@@ -180,13 +175,22 @@
         border-top: solid 2px var(--white);
     }
 
+    .keyNumber > li > span:first-of-type {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: .5rem;
+    }
+
     .texte {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 4rem;
         width: 100%;
+        padding: 4rem;
+
     }
 
     .texte > div {
@@ -195,12 +199,18 @@
         gap: 2rem;
         justify-content: flex-start;
         align-items: flex-start;
-        max-width: 50%;
+        width: 100%;
+        max-width: 500px;
+
     }
 
     .texte > img {
         background-color: #ccc;
-        max-width: 50%;
-        aspect-ratio: 16 / 9;
+        width: 50%;
+        max-width: 500px;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 20px;
+        min-width: 430px;
     }
 </style>
