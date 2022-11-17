@@ -19,7 +19,9 @@
         <img alt={info.name} src={info.thumbnail}>
     </picture>
     <div class="txt">
-        <p>{distance + " km"}</p>
+        {#if distance}
+            <p>{distance + " km"}</p>
+        {/if}
         <span class="title">{info.name}</span>
         <p class="description">
             {info.description}

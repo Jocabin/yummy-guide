@@ -27,9 +27,7 @@
 <section class="gridLayout">
     <div class="wrapper-section">
         {#each dataFiltred as restaurant (restaurant.id)}
-            {#if restaurant.visibility}
-                <RestaurantTile info={restaurant}/>
-            {/if}
+            <RestaurantTile info={restaurant}/>
         {/each}
     </div>
 </section>
