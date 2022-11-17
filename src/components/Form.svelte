@@ -4,6 +4,8 @@
     import {supabase} from "$lib/supabaseClient";
     import {onMount} from "svelte";
     import SearchAutocomplete from "./SearchAutocomplete.svelte";
+    import {goto} from "$app/navigation";
+
 
     let nameForm = null;
     let descriptionForm = null;
@@ -88,6 +90,7 @@
             address: address.label
         }
         console.log(object)
+        goto(`/commerces-responsables`)
     }
 
     async function registerImg(img) {
@@ -234,7 +237,6 @@
         background-color: rgba($black, .0)
 
         &[type="checkbox"]
-          display: none
 
       label
         &.tag
