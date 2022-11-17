@@ -1,11 +1,14 @@
 <script>
     export let data;
+    export let member;
+
+    let url = `https://iqspsbttjincakboaccn.supabase.co/storage/v1/object/public/images/team-profile/${member.name.toString().toLowerCase().replace("é", "e").replace("ë", "e")}.jpg`;
 </script>
 
 <li>
-    <img loading="lazy" width="164" height="164" src={data.image} alt={"Photo de profil de " + data.name}>
-    <p class="title">{data.name}</p>
-    <p>{data.job}</p>
+    <img loading="lazy" width="164" height="164" src={url} alt={"Photo de profil de " + member.name}>
+    <p class="title">{member.name}</p>
+    <p>{member.job}</p>
 </li>
 
 <style>
@@ -21,6 +24,7 @@
         height: 10.25rem;
         background-color: #ccc;
         border-radius: 100%;
+        object-fit: cover;
     }
 
     p:not(.title) {

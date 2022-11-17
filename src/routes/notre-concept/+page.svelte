@@ -25,7 +25,7 @@
     <h2>Notre équipe</h2>
     <ul class="gridLayout">
         {#each data.team as member (member.id)}
-            <TeamItem data={member} />
+            <TeamItem member={member} />
         {/each}
     </ul>
 </section>
