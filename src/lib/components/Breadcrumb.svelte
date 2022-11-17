@@ -3,7 +3,7 @@
 </script>
 <section class="breadcrumb">
     <div class="wrapper-section">
-        <a href="/" title="acceuil" target="_self">Acceuil</a>
+        <a href="/" title="acceuil" target="_self">Accueil</a>
         <span>></span>
         <p>commerces-responsables</p>
     </div>

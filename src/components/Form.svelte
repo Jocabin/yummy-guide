@@ -5,6 +5,7 @@
     import {onMount} from "svelte";
     import SearchAutocomplete from "./SearchAutocomplete.svelte";
     import {goto} from "$app/navigation";
+    import FormTag from "$lib/components/FormTag.svelte";
 
 
     let nameForm = null;
@@ -183,12 +184,8 @@
         </select>
     </p>
     <fieldset class="tags">
-        {#each tags as tag}
-            <p>
-                <label for={tag.name} on:click={(e)=> e.target.classList.toggle("active")}
-                       class="tag">{tag.name}</label>
-                <input type="checkbox" value={tag.id} id={tag.name} on:click={(e)=>tagsManager(e)}>
-            </p>
+        {#each tags as tag (tag.id)}
+            <FormTag tagInfo={tag} checkedAction={(e)=>tagsManager(e)}></FormTag>
         {/each}
     </fieldset>
     <fieldset class="livraison">
@@ -235,19 +232,4 @@
         border: none
         border-bottom: 2px solid $orange
         background-color: rgba($black, .0)
-
-        &[type="checkbox"]
-
-      label
-        &.tag
-          color: $orange
-          border: 1px solid $orange
-          display: inline-block
-          border-radius: 100px
-          padding: .25em 1em
-          transition: all ease-in-out 150ms
-
-          &:hover, &:focus
-            background-color: rgba($black, .05)
-
 </style>
