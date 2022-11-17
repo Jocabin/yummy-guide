@@ -29,7 +29,8 @@
         {#each dataFiltred as restaurant (restaurant.id)}
             <RestaurantTile info={restaurant}/>
         {/each}
-        <a class="add" href="/commerces-responsables/ajouter" target="_self" title="Ajouter une page">
+        <a class="add" href="/commerces-responsables/ajouter" style="display: none" target="_self"
+           title="Ajouter une page">
             Ajouter un établissement
         </a>
     </div>
@@ -37,6 +38,11 @@
 
 <style lang="sass">
   section
+    width: 100%
+
+    h1
+      text-align: center
+
     &.gridLayout
       margin-block-end: 4em
 
