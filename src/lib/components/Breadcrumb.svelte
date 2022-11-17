@@ -1,29 +1,34 @@
 <script>
-//todo à faire
-</script>
-<section class="breadcrumb">
-    <div class="wrapper-section">
-        <a href="/" title="acceuil" target="_self">Accueil</a>
-        <span>></span>
-        <p>commerces-responsables</p>
-    </div>
-</section>
-<style lang="sass">
-    section
-      width: 100%
-      div.wrapper-section
-        margin-inline: auto
-        max-width: $maxWidth
-        width: 100%
-        display: flex
-        align-items: center
-        justify-content: start
-        gap: 10px
-        a
-          text-decoration: none
-          color: $black
-          transition: all ease-in-out 150ms
-          &:hover, &:focus
-            color: $orange
+    //todo à faire
+    import {page} from "$app/stores"
 
+    let paths = $page.url.pathname.split("/")
+</script>
+
+<div>
+    <a href="/">Accueil</a>
+
+    {#each paths as path}
+        {#if path !== ""}
+            <span>&nbsp;>&nbsp;</span>
+        {/if}
+
+        <span>{path}</span>
+    {/each}
+</div>
+
+<style lang="sass">
+  div
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: flex-start
+    padding: 1rem
+    gap: .5rem
+    align-self: flex-start
+
+    a
+      color: $black
+      text-decoration: none
+      border-bottom: 1px solid $black
 </style>

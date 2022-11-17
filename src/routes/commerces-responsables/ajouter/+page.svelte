@@ -1,6 +1,9 @@
 <script>
     import Form from "../../../components/Form.svelte";
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 </script>
+<Breadcrumb/>
+
 <section>
     <div class="wrapper-section">
         <h1>Ajouter un commerce</h1>

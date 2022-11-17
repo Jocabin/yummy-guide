@@ -1,9 +1,12 @@
 <script>
     import TeamItem from "$lib/components/TeamItem.svelte";
     import image from "$lib/assets/image.png"
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 
     export let data;
 </script>
+
+<Breadcrumb/>
 
 <section class="concept">
     <div>

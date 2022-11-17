@@ -1,8 +1,8 @@
 <script>
-    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 </script>
 
-<Breadcrumb />
+<Breadcrumb/>
 
 <h1>Mentions légales</h1>
 

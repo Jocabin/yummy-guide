@@ -1,8 +1,8 @@
 <script>
     import RestaurantTile from "$lib/components/RestaurantTile.svelte";
-    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
     import Filters from "$lib/components/Filters.svelte";
     import {onMount} from "svelte";
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 
     export let data;
     let dataFiltred = []
@@ -15,7 +15,9 @@
         dataFiltred = newData
     }
 </script>
+
 <Breadcrumb/>
+
 <section class="heading">
     <h1>Recherchez un commerce</h1>
 </section>

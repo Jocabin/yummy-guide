@@ -1,3 +1,8 @@
+<script>
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+</script>
+
+<Breadcrumb/>
 <h1>Foires aux questions</h1>
 
 <p>

@@ -1,6 +1,7 @@
 <script>
     //todo map à faire
     import {supabase} from "$lib/supabaseClient";
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 
     export let data;
     let pageData = data.restaurant[0];
@@ -20,6 +21,8 @@
             })
     })
 </script>
+
+<Breadcrumb/>
 
 <section class="heading">
     <picture>

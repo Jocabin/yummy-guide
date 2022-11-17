@@ -1,3 +1,9 @@
+<script>
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+</script>
+
+<Breadcrumb/>
+
 <div>
     <h1>C'est envoyé !</h1>
 
