@@ -52,7 +52,7 @@
 
 <style>
     section {
-        padding: 0 2rem;
+        padding: 4rem;
     }
 
     .gridLayout {
@@ -70,7 +70,7 @@
     .concept {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 4rem;
         width: 100%;
@@ -111,10 +111,6 @@
         width: 100%;
         height: 100%;
         border-radius: 20px;
-    }
-
-    .missions {
-        padding: 2rem;
     }
 
     .team {
