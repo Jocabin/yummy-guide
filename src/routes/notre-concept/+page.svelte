@@ -34,9 +34,11 @@
 
 <section class="missions">
     <h2>Notre mission</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet cum facilis itaque laborum nulla quas quis
-        repellendus voluptatum! Atque cum cupiditate deserunt excepturi incidunt possimus quae? Accusantium,
-        consectetur, odio?</p>
+    <p>
+        Chez Yummy, notre mission est d’aider les consommateurs soucieux de la qualité et/ou provenance de leurs
+        produits à trouver un commerce dans un périmètre proche de lui, qui valorise une pratique éco-responsable, le
+        tout grâce à un site web en ligne qui servira de guide pour tous les utilisateurs.
+    </p>
 </section>
 
 <section class="team">
@@ -109,6 +111,10 @@
         width: 100%;
         height: 100%;
         border-radius: 20px;
+    }
+
+    .missions {
+        padding: 2rem;
     }
 
     .team {

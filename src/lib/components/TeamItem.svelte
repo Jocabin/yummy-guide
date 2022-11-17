@@ -27,6 +27,10 @@
         object-fit: cover;
     }
 
+    .title {
+        font-weight: bold;
+    }
+
     p:not(.title) {
         margin: 0;
     }
