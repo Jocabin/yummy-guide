@@ -5,7 +5,7 @@
     import Header from "../lib/components/Header.svelte";
     import Cookie from "$lib/components/Cookie.svelte";
 
-    import {cookie} from "$lib/store";
+    // import {cookie} from "$lib/store";
 </script>
 
 <Header/>
@@ -13,7 +13,7 @@
 <main>
     <slot></slot>
 
-    {#if !$cookie}
+    {#if false}
         <Cookie/>
     {/if}
 </main>
