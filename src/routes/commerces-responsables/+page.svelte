@@ -1,11 +1,14 @@
 <script>
     import RestaurantTile from "$lib/components/RestaurantTile.svelte";
-    import "../styles.css"
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
     import Filters from "$lib/components/Filters.svelte";
+    import {onMount} from "svelte";
 
     export let data;
-    let dataFiltred = data.data
+    let dataFiltred = []
+    onMount(() => {
+        dataFiltred = data.data
+    })
 
     function filterData(newData) {
         console.log(newData)
