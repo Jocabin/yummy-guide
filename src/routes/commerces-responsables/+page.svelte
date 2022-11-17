@@ -19,25 +19,54 @@
 <section class="heading">
     <h1>Recherchez un commerce</h1>
 </section>
-<section class="filter">
-    <div class="wrapper-section">
-        <Filters {data} {filterData}/>
-    </div>
-</section>
+
+<Filters {data} {filterData}/>
+
 <section class="gridLayout">
     <div class="wrapper-section">
         {#each dataFiltred as restaurant (restaurant.id)}
             <RestaurantTile info={restaurant}/>
         {/each}
+        <a class="add" href="/commerces-responsables/ajouter" target="_self" title="Ajouter une page">
+            Ajouter un établissement
+        </a>
     </div>
 </section>
 
 <style lang="sass">
   section
+    &.gridLayout
+      margin-block-end: 4em
+
     div.wrapper-section
       max-width: $maxWidth
       margin-inline: auto
       display: grid
-      grid-template-columns: repeat(3, 1fr)
+      grid-template-columns: repeat(3, calc(100% / 3))
       gap: 60px 20px
+
+      a.add
+        justify-self: center
+        align-self: center
+        background-color: rgba(white, .25)
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 2px solid $orange
+        border-radius: 10px
+        color: $orange
+        text-transform: uppercase
+        font-weight: bolder
+        font-size: 2em
+        text-align: center
+        text-decoration: none
+        transition: all ease-in-out 300ms
+        width: 100%
+        min-height: 600px
+        min-width: calc(#{$maxWidth} / 3)
+
+
+        &:hover, &:focus
+          background-color: rgba(white, 1)
+
 </style>

@@ -60,39 +60,87 @@
     }
 
     async function getTypes() {
-        const {data, error} = await supabase.from('types').select();
+        const {data, error} = await supabase.from('styles').select();
         types = data
         error && console.error(error)
     }
 </script>
 
-<div class="filters">
-    <p>
-        <label for="keywords" style="display: none">Mot clé</label>
-        <select id="keywords" name="keywords" on:change={(e)=>changeKeyword(e)}>
-            <option selected="selected" value="-1">Type</option>
-            {#each types as item (item.id)}
-                <option value={item.id}>{item.name}</option>
-            {/each}
-        </select>
-    </p>
-    <p>
-        <label for="distance" style="display: none">Distance</label>
-        <select id="distance" name="distance" on:change={(e) => changeDistance(e)}>
-            <option selected="selected" value="100">Distance</option>
-            <option value="1">A pied</option>
-            <option value="5">A vélo</option>
-            <option value="20">En transport</option>
-        </select>
-    </p>
-    <p>
-        <label for="price" style="display: none">Prix</label>
-        <select id="price" name="price" on:change={(e)=>changePrice(e)}>
-            <option selected="selected" value="4">Price</option>
-            <option value="1">€</option>
-            <option value="2">€€</option>
-            <option value="3">€€€</option>
-        </select>
-    </p>
-    <button on:click={()=> resetForm()}>Reset</button>
-</div>
+<section>
+    <div class="filters">
+        <p>
+            <label for="keywords" style="display: none">Mot clé</label>
+            <select id="keywords" name="keywords" on:change={(e)=>changeKeyword(e)}>
+                <option selected="selected" value="-1">Style</option>
+                {#each types as item (item.id)}
+                    <option value={item.id}>{item.name}</option>
+                {/each}
+            </select>
+        </p>
+        <p>
+            <label for="distance" style="display: none">Distance</label>
+            <select id="distance" name="distance" on:change={(e) => changeDistance(e)}>
+                <option selected="selected" value="100">Distance</option>
+                <option value="1">A pied</option>
+                <option value="5">A vélo</option>
+                <option value="20">En transport</option>
+            </select>
+        </p>
+        <p>
+            <label for="price" style="display: none">Prix</label>
+            <select id="price" name="price" on:change={(e)=>changePrice(e)}>
+                <option selected="selected" value="4">Price</option>
+                <option value="1">€</option>
+                <option value="2">€€</option>
+                <option value="3">€€€</option>
+            </select>
+        </p>
+        <button on:click={()=> resetForm()}>Reinitialiser</button>
+    </div>
+    {#if dataFiltred.length > 0}
+        <p>{dataFiltred.length + " résultats"}</p>
+    {/if}
+</section>
+
+<style lang="sass">
+  section
+    margin-block-end: 3em
+    display: flex
+    flex-direction: column
+    gap: 1em
+    align-items: center
+
+    div.filters
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 10px
+      overflow: hidden
+      background: $orange
+
+      p
+        margin: 0
+
+        select
+          padding: 1em 2em
+          border: none
+          background: transparent
+          color: $white
+
+
+      button
+        padding: calc(.75em + 1px) 1em
+        border: none
+        background: $dark-blue
+        color: $white
+        border-radius: 10px
+        margin: .5em .5em .5em 1em
+        cursor: pointer
+        transition: all ease-in-out 150ms
+
+        &:hover, &:focus
+          background-color: lighten($dark-blue, 5)
+
+
+</style>
