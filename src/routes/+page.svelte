@@ -14,7 +14,7 @@
         <div class="wrapper">
             <h1>Trouvez les commerces éco-responsables autour de vous</h1>
             <p class="baseline">
-                Restaurants, cafés ou épicerie, vous trouverez votre bonheur !
+                Votre guide local recensant les commerces éthiques et responsables dans la région Bordelaise.
             </p>
         </div>
         <div class="wrapper">
@@ -29,9 +29,11 @@
 </section>
 <section class="discover">
     <h2>Découvrez les établissements partenaires</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at consequuntur dignissimos distinctio earum,
-        enim excepturi, facere facilis harum illum, ipsam minima minus quod saepe sapiente sequi tempora unde
-        voluptatem?</p>
+    <p>
+        Voici une sélection de commerce qui proposent des actions favorisant l’éco-responsabilité grâce à l’utilisation
+        de produits de saison, d’importation des grains d’un pays proche, ou même d’un commerce qui livre ses produits à
+        vélo par exemple…
+    </p>
     <h3>Nos cafés et salon de thé</h3>
     <ul>
         {#each restaurants as restaurant (restaurant.id)}

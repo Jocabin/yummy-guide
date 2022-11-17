@@ -7,9 +7,7 @@
 <section>
     <div class="wrapper-section">
         <h1>Ajouter un commerce</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi corporis debitis deserunt enim
-            exercitationem, harum id nihil nobis, odio porro provident quaerat quisquam repellat repudiandae sapiente
-            sit totam vel?</p>
+        <p>Aidez-nous à recenser les commerces éco-responsable près de chez vous.</p>
     </div>
 </section>
 <section class="form">
