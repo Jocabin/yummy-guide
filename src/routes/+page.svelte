@@ -4,9 +4,7 @@
     export let data;
 
     let restaurants = data.restaurants;
-
 </script>
-
 <section class="hero">
     <video autoplay muted src="/People Being Served their Food and Getting Ready to Eat.mp4">
     </video>
