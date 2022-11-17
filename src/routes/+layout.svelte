@@ -13,7 +13,7 @@
 <main>
     <slot></slot>
 
-    {#if false}
+    {#if !$cookie}
         <Cookie/>
     {/if}
 </main>

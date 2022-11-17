@@ -117,7 +117,7 @@
     function submitForm() {
         registerImg(image.imageForm).then(getImageUrl())
         saveDatas()
-
+        goto("/commerces-responsables/ajouter/confirmation")
     }
 
     function imageLoading(e) {

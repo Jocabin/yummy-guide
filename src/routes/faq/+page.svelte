@@ -39,7 +39,6 @@
 </section>
 
 <style>
-
     .questions {
         max-width: 950px;
         width: 100%;
