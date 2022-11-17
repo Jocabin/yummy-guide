@@ -15,12 +15,10 @@
                 responsables</a>
             <a href="/blog" title="Blog" target="_self">Blog</a>
             <a href="/faq" title="F.A.Q" target="_self">FAQ</a>
-            <a href="/nous-contacter" title="Contact" target="_self">Contact</a>
         </nav>
         <ul class="reseaux">
             <RSLink url="https://www.facebook.com/profile.php?id=100087622582546" social="facebook"/>
             <RSLink url="https://www.instagram.com/yummy.guide_/" social="instagram"/>
-            <RSLink social="twitter"/>
         </ul>
     </div>
     <nav>
