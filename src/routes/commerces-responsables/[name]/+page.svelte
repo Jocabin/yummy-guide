@@ -29,14 +29,12 @@
             })
     })
 </script>
-
-<Breadcrumb/>
-
 <section class="heading">
     <picture>
-        <img src={pageData.thumbnail} alt={pageData.name}>
+        <img alt={pageData.name} src={pageData.thumbnail}>
     </picture>
 </section>
+<Breadcrumb/>
 <section class="infos">
     <div class="wrapper-section">
         <ul class="tags">
@@ -50,12 +48,12 @@
 </section>
 <section id="map">
     <iframe
-            width="450"
-            height="250"
-            frameborder="0" style="border:0"
-            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            frameborder="0"
+            height="250" referrerpolicy="no-referrer-when-downgrade"
             src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyA0n6tlDmXklI2kMKIxLOXn-3_V0cZDeR0&q=${point.address}&center=${point.lat},${point.long}`}
-            allowfullscreen>
+            style="border:0"
+            width="450">
     </iframe>
 </section>
 
@@ -93,15 +91,17 @@
 
     &.heading
       picture
+        background-color: $black
         display: block
         width: 100%
-        height: 600px
+        height: 400px
 
         img
           width: 100%
           height: 100%
           object-fit: cover
           object-position: center center
+          opacity: 1
 
     &.infos
       div.wrapper-section
