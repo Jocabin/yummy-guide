@@ -189,12 +189,12 @@
 
   section.discover
     width: 100%
-    overflow: hidden
+    overflow: scroll
     margin-block: 2em
 
     ul
       display: flex
-      width: calc(400px * 10)
+      width: fit-content
       gap: 20px
 
       li
