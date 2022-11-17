@@ -13,7 +13,6 @@
             <a href="/notre-concept" title="Notre concept" target="_self">Notre concept</a>
             <a href="/commerces-responsables" title="Les commerces responsables" target="_self">Les commerces
                 responsables</a>
-            <a href="/blog" title="Blog" target="_self">Blog</a>
             <a href="/faq" title="F.A.Q" target="_self">FAQ</a>
         </nav>
         <ul class="reseaux">

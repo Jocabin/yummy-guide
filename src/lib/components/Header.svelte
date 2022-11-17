@@ -11,7 +11,6 @@
                 <MenuItem href="/">Accueil</MenuItem>
                 <MenuItem href="/notre-concept">Notre concept</MenuItem>
                 <MenuItem href="/commerces-responsables">Commerces responsables</MenuItem>
-                <MenuItem href="/blog">Blog</MenuItem>
                 <MenuItem href="/faq">FAQ</MenuItem>
 
                 <a class="button" href="/commerces-responsables/ajouter" title="Ajouter un commerce" target="_self">Ajouter un commerce</a>
