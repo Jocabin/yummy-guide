@@ -66,7 +66,6 @@
                     site_url: siteUrlForm || null,
                     longitude: address.lng || null,
                     latitude: address.lat || null,
-                    //todo plusieurs tags
                     tags: JSON.stringify(tagsForm),
                     style: styleForm,
                     thumbnail: image.url,
