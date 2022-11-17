@@ -26,14 +26,13 @@
     function filtringData() {
         dataFiltred = data.data.filter(item => {
             console.log(item)
-            if (price > 3 || keyword === "-1") {
-                return distanceMatrix(userLat, userLng, item.latitude, item.longitude) <= distance && item.price_indicator <= price && item.type > "-1"
+            if (price > 3) {
+                return distanceMatrix(userLat, userLng, item.latitude, item.longitude) <= distance && item.price_indicator <= price
             } else {
-                return distanceMatrix(userLat, userLng, item.latitude, item.longitude) <= distance && item.price_indicator == price && item.type == keyword
+                return distanceMatrix(userLat, userLng, item.latitude, item.longitude) <= distance && item.price_indicator == price
             }
         })
 
-        console.log(distance, price, keyword)
         filterData(dataFiltred)
     }
 
@@ -65,8 +64,6 @@
         types = data
         error && console.error(error)
     }
-
-    $: console.log(types)
 </script>
 
 <div class="filters">
