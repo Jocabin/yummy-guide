@@ -1,14 +1,11 @@
 <script>
-    export let name;
-    export let job;
-
-    let url = `https://iqspsbttjincakboaccn.supabase.co/storage/v1/object/public/images/team-profile/${name.toString().toLowerCase().replace("é", "e").replace("ë", "e")}.jpg`;
+    export let data;
 </script>
 
 <li>
-    <img loading="lazy" width="164" height="164" src={url} alt={"Photo de profil de " + name}>
-    <p class="title">{name}</p>
-    <p>{job}</p>
+    <img loading="lazy" width="164" height="164" src={data.image} alt={"Photo de profil de " + data.name}>
+    <p class="title">{data.name}</p>
+    <p>{data.job}</p>
 </li>
 
 <style>

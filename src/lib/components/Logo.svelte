@@ -20,7 +20,8 @@
 
 <style>
     svg {
-        width: 8rem;
-        height: 2.5rem;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 </style>
